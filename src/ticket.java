@@ -37,7 +37,7 @@ public class ticket {
 
             System.out.println("the list of Tickets: " + tickets[currentTicket]);
         }
-        
+
 
 
 
