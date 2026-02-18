@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class ticket {
     public static void main(String [] args) {
 
-        int maxOnOfTickts = 5;
+        int maxNumOfTickts = 5;
 
 
         boolean keeprunning = true;
 
-        String[] tickets = new String[maxOnOfTickts];
+        String[] tickets = new String[maxNumOfTickts ];
 
         Scanner inputBuffObj = new Scanner(System.in);
 
 //create
-        for (int currentTicket = 0; currentTicket < maxOnOfTickts; currentTicket++) {
+        for (int currentTicket = 0; currentTicket < maxNumOfTickts ; currentTicket++) {
             //System.out.printf("[%d] place enter your feedback: ", currentNoOfTickets);
 
             System.out.println("Enter ticket ID: ");
@@ -33,17 +33,50 @@ public class ticket {
         }
 
         //list
-        for (int currentTicket = 0; currentTicket < maxOnOfTickts; currentTicket++) {
+        for (int currentTicket = 0; currentTicket < maxNumOfTickts ; currentTicket++) {
 
             System.out.println("the list of Tickets: " + tickets[currentTicket]);
         }
+        
+        //update Ticket
+
+        System.out.print("Enter Ticket ID to update: ");
+        String updateId = inputBuffObj.nextLine();
+
+        for (int ticketId = 0; ticketId < maxNumOfTickts ; ticketId++) {
+            if(tickets[ticketId] != null && tickets[ticketId].contains(updateId)) {
+                System.out.println(" Enter new title: ");
+                String newTitle = inputBuffObj.nextLine();
+
+                System.out.println(" Enter new Description: ");
+                String newDesc = inputBuffObj.nextLine();
+
+                System.out.println(" Enter new Status: ");
+                String newStatus = inputBuffObj.nextLine();
+
+                tickets[ticketId] = " ID: " + updateId + " | Title: " + newTitle + " | Desc: " + newDesc + " | Status: " + newStatus;
+
+                System.out.println("Ticket updated successfully!");
+
+                break;
+
+
+            }
 
 
 
+            }
 
         }
-
         }
+        
+        
+
+
+
+
+
+
 
 
 
